@@ -1,0 +1,33 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <h1>Welcome, to the Client CRUD!</h1>
+            <p>This is a little intro in this work.</p>
+            <p>This work is related with a Postgraduate assignment in the subject Development of WEB Applications for Mobile Devices.</p>
+            <p>Here we have a CRUD that add, delete and edit clients. Each client have the fields ID, First Name, Last Name, Phone Number, Date of Birthday, Gender, Age and Address.</p>
+            <p>To test this CRUD you must first login with the default account: 
+                <br> - Login: user 
+                <br> - Password: user
+            </p>
+            <p>The members that worked in this project are: <br>
+                - André Rodrigues <br>
+                - Diego Rodrigues <br>
+                - Marcelo Dominato <br>
+                - Paulo Henrique
+            </p>
+
+            <div ng-switch="vm.isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true">
+                    You are logged in as user "{{vm.account.login}}".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- User (login="user" and password="user").
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

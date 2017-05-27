@@ -1,0 +1,73 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myClientLabel">Create or edit a Client</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.client.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.client.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.client.firstName" required
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.client.lastName" required
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_phoneNumer">Phone Numer</label>
+            <input type="text" class="form-control" name="phoneNumer" id="field_phoneNumer"
+                    ng-model="vm.client.phoneNumer" required
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dateOfBirthday">Date Of Birthday</label>
+                <div class="input-group">
+                    <input id="field_dateOfBirthday" type="text" class="form-control" name="dateOfBirthday" uib-datepicker-popup="{{dateformat}}" ng-model="vm.client.dateOfBirthday" is-open="vm.datePickerOpenStatus.dateOfBirthday" required
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfBirthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_gender">Gender</label>
+            <select class="form-control" name="gender" ng-model="vm.client.gender" id="field_gender" required>
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_age">Age</label>
+            <input type="number" class="form-control" name="age" id="field_age"
+                    ng-model="vm.client.age" required
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.client.address" required
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
