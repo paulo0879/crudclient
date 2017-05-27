@@ -28,19 +28,6 @@ auto-refreshes when files change on your hard drive.
 specifying a newer version in [bower.json](bower.json). You can also run `bower update` and `bower install` to manage dependencies.
 Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
 
-## Building for production
-
-To optimize the CrudClient application for production, run:
-
-    ./gradlew -Pprod clean bootRepackage
-
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
-
-    java -jar build/libs/*.war
-
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
-
 ## Testing
 
 To launch your application's tests, run:
